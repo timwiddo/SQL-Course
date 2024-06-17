@@ -11,8 +11,10 @@ VALUES ('Tina', 'Belcher', 13);
 
 -- Insert multiple persons
 INSERT INTO people (first_name, last_name, age)
-VALUES ('Linda', 'Belcher',  45),
-				('Phillip', 'Frond', 38),
-                ('Calvin', 'Fischoeder', 70);
+VALUES 
+	('Linda', 'Belcher',  45),
+	('Phillip', 'Frond', 38),
+        ('Calvin', 'Fischoeder', 70);
 
-SELECT * FROM people 
+SELECT * 
+FROM people;
