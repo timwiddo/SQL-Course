@@ -44,7 +44,7 @@ FROM
 
 SELECT 
     CONCAT(
-			SUBSTR(author_fname, 1, 1),
+	    SUBSTR(author_fname, 1, 1),
             '.',
             SUBSTR(author_lname, 1, 1),
             '.') AS Initials
@@ -79,7 +79,7 @@ FROM books;
 -- print authors fname as forwards and its reverse as backwards 
 
 SELECT
-	author_fname AS forwards,
+    author_fname AS forwards,
     REVERSE(author_fname) AS backwards
 FROM books;
 
@@ -105,9 +105,9 @@ SELECT
 
 SELECT 
 	CONCAT(
-				title,
+		title,
                 ' was released in ',
-				released_year
+		released_year
                 )
 FROM books;
 
@@ -116,7 +116,7 @@ FROM books;
 -- show the title length (characters)
 
 SELECT title,
-				char_length(title) AS length
+	char_length(title) AS length
 FROM books;
 
 /* -------------------------------------------- */
@@ -124,7 +124,7 @@ FROM books;
 -- show the shortened booktitle xxx...., the author Smith, John and the quantities in stock
 
 SELECT
-	CONCAT(SUBSTR(title, 1,10), '...') AS short_title,
+    CONCAT(SUBSTR(title, 1,10), '...') AS short_title,
     CONCAT(author_lname, ', ', author_fname) AS author_fullname,
     CONCAT(stock_quantity, ' in stock') AS quantity
 FROM books;
