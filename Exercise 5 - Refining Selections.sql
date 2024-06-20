@@ -59,11 +59,11 @@ ORDER BY author_lname, title;
 -- ( MY FAVOURITE AUTHOR IS XXX <-authors full names sorted by last name)
 
 SELECT CONCAT(
-				'MY FAVOURITE AUTHOR IS',
+		'MY FAVOURITE AUTHOR IS',
                 ' ',
                 UPPER(author_fname),
                 ' ',
-				UPPER(author_lname),
+		UPPER(author_lname),
                 '!') AS yell
 FROM books
 ORDER BY yell DESC;
