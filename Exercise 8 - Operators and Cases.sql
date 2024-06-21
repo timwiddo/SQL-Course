@@ -40,7 +40,7 @@ WHERE author_lname LIKE 'L%' OR 'S%';
 
 SELECT  title, author_lname,
 CASE 
-	WHEN title LIKE '%stories%' THEN 'Short Stories'
+    WHEN title LIKE '%stories%' THEN 'Short Stories'
     WHEN title = 'Just Kids' THEN 'Memoir'
     WHEN title = 'A Heartbreaking Work of Staggering Genius' THEN 'Memoir'
     ELSE 'Novel'
@@ -52,8 +52,8 @@ FROM books;
 
 SELECT author_fname, author_lname,
 CASE
-WHEN COUNT(*) = 1 THEN '1 book'
-ELSE CONCAT(COUNT(*), ' ', 'books') 
+    WHEN COUNT(*) = 1 THEN '1 book'
+    ELSE CONCAT(COUNT(*), ' ', 'books') 
 END AS books_written
 FROM books
 GROUP BY author_fname, author_lname;
