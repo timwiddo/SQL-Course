@@ -98,14 +98,14 @@ GROUP BY genre;
 /*-------------------------------------------*/
  -- Challenge #6 - Get each reviewers f/l - name plus review count and min max scores they gave.Set their status to ACTIVE if they have left at least 2 reviews 
 
-SELECT first_name, 
-				 last_name, 
-                 COUNT(*) AS review_count, 
-                 MIN(rating) AS min_rating, MAX(rating) AS max_rating,
-                 CASE
-					WHEN COUNT(*) > 1 THEN 'ACTIVE'
-                    ELSE 'INACTIVE'
-                 END AS status
+SELECT  first_name, 
+	last_name, 
+        COUNT(*) AS review_count, 
+        MIN(rating) AS min_rating, MAX(rating) AS max_rating,
+        CASE
+		WHEN COUNT(*) > 1 THEN 'ACTIVE'
+                ELSE 'INACTIVE'
+        END AS status
 FROM reviewers rw
 LEFT JOIN reviews r ON rw.id = r.reviewer_id
 GROUP BY first_name, last_name;    
