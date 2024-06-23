@@ -3,7 +3,7 @@
 -- 1.Users
 
 CREATE TABLE users (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(255) UNIQUE NOT NULL,
     created_at TIMESTAMP DEFAULT NOW()
     );
@@ -11,7 +11,7 @@ CREATE TABLE users (
     -- 2. Content
     
     CREATE TABLE photos (
-		id INT PRIMARY KEY AUTO_INCREMENT,
+	id INT PRIMARY KEY AUTO_INCREMENT,
         image_url VARCHAR(255) NOT NULL,
         user_id INT NOT NULL,
 		created_at TIMESTAMP DEFAULT NOW(),
@@ -21,7 +21,7 @@ CREATE TABLE users (
 -- 3. Comments
 
 CREATE TABLE comments (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     comment_text VARCHAR(255) NOT NULL,
     user_id INT NOT NULL,
     photo_id INT NOT NULL,
@@ -33,8 +33,8 @@ CREATE TABLE comments (
   -- 4. Likes
   
   CREATE TABLE likes (
-	user_id INT NOT NULL,
-	photo_id INT NOT NULL,
+    user_id INT NOT NULL,
+    photo_id INT NOT NULL,
     created_at TIMESTAMP DEFAULT NOW(),
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (photo_id) REFERENCES photos(id),
@@ -88,7 +88,7 @@ CREATE TABLE follows (
     -- On which day of the week do most users register onto our site?
     
     SELECT DAYNAME(created_at) AS created_day,
-					COUNT(*) AS number_of_users
+	   COUNT(*) AS number_of_users
     FROM users
     GROUP BY DAYNAME(created_at)
     ORDER BY COUNT(*) DESC;
@@ -153,7 +153,7 @@ FROM users u INNER JOIN likes l ON u.id = l.user_id
 GROUP BY l.user_id
 HAVING count = (
 	SELECT COUNT(*) 		-- 257 is the number of uploaded photos
-    FROM photos
+FROM photos
 );
     
 /*---------------------------------------------*/
