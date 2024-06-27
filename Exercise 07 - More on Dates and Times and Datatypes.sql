@@ -68,7 +68,7 @@ SELECT DATE_FORMAT(NOW(), '%M %D at %k:%i') AS formatted_date2;
 USE exercises_udemy;
 
 CREATE TABLE tweets (
-	content VARCHAR(180),
+    content VARCHAR(180),
     username VARCHAR(20),
     created_at TIMESTAMP DEFAULT NOW()
     );
