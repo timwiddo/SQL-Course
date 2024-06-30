@@ -30,7 +30,7 @@ WHERE pages = ( SELECT MAX(pages) FROM books);
 /*----------------------------------------------*/
 -- get the ordered years, number of books and avg pages 
 
-SELECT released_year, COUNT(*) AS books_released, AVG(pages) AS average_pages
+SELECT released_year, COUNT(*)  AS books_released, AVG(pages) AS average_pages
 FROM books
 GROUP BY released_year
 ORDER BY released_year;
