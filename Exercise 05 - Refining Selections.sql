@@ -7,7 +7,7 @@ INSERT INTO books
            ('Lincoln In The Bardo', 'George', 'Saunders', 2017, 1000, 367);
            
 SELECT *
-FROM books;
+FROM  books;
 
 /*----------------------------------------------------*/
 -- Select titles that contain 'stories'
